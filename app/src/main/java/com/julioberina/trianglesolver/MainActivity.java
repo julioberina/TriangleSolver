@@ -249,26 +249,39 @@ public class MainActivity extends AppCompatActivity {
         catch (Exception e) { sideC = 0; unknown += "c"; }
 
         //Solve the triangle based on the unknown
-        if (unknown.length() < 3) {
+        if (unknown.length() > 3) {
             Toast error = Toast.makeText(this, "Not enough given", Toast.LENGTH_LONG);
             error.show();
         }
 
-        else if (unknown.length() > 3) {
+        else if (unknown.length() < 3) {
             Toast error = Toast.makeText(this, "Too many given", Toast.LENGTH_LONG);
             error.show();
         }
 
         else {
             //Solve the triangle based on unknown
-            //Concatenate answers to answer fields in answers layout
             Triangle triangle = new Triangle(unknown);
-            leftA.append(String.format("%.4f\n", angleA));
-            leftB.append(String.format("%.4f\n", angleB));
-            leftC.append(String.format("%.4f\n", angleC));
-            rightA.append(String.format("%.4f\n", sideA));
-            rightB.append(String.format("%.4f\n", sideB));
-            rightC.append(String.format("%.4f\n", sideC));
+
+            //Allow for modification of angles and sides answers
+            leftA = (TextView)findViewById(R.id.Aanswer);
+            leftB = (TextView)findViewById(R.id.Banswer);
+            leftC = (TextView)findViewById(R.id.Canswer);
+            rightA = (TextView)findViewById(R.id.aanswer);
+            rightB = (TextView)findViewById(R.id.banswer);
+            rightC = (TextView)findViewById(R.id.canswer);
+
+            //Allow for modification of visibility of angles and sides
+            leftAnswers = (LinearLayout)findViewById(R.id.angles);
+            rightAnswers = (LinearLayout)findViewById(R.id.sides);
+
+            //Add angles and sides to answers field
+            leftA.setText("A:  " + String.format("%.4f\n", angleA));
+            leftB.setText("B:  " + String.format("%.4f\n", angleB));
+            leftC.setText("C:  " + String.format("%.4f\n", angleC));
+            rightA.setText("a:  " + String.format("%.4f\n", sideA));
+            rightB.setText("b:  " + String.format("%.4f\n", sideB));
+            rightC.setText("c:  " + String.format("%.4f\n", sideC));
 
             //Make answers layout visible
             leftAnswers.setVisibility(View.VISIBLE);
