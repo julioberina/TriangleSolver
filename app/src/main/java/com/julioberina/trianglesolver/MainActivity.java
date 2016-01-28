@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 result = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) - 2*x*y*Math.cos(Z * Math.PI / 180.0));
 
             else if (Z == 0)
-                result = Math.acos((Math.pow(x, 2) + Math.pow(y, 2) - Math.pow(z, 2)) / 2*x*y) * 180.0 / Math.PI;
+                result = Math.acos((Math.pow(x, 2) + Math.pow(y, 2) - Math.pow(z, 2)) / (2*x*y)) * 180.0 / Math.PI;
 
             return result;
         }
