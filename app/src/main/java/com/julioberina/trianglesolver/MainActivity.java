@@ -168,13 +168,11 @@ public class MainActivity extends AppCompatActivity {
 
             double result = 0.0;
 
-            if (X == 0) {
+            if (X == 0)
                 result = Math.asin(x * Math.sin(Y * Math.PI / 180.0) / y) * 180.0 / Math.PI;
-            }
 
-            else if (x == 0) {
+            else if (x == 0)
                 result = y * Math.sin(X * Math.PI / 180.0) / Math.sin(Y * Math.PI / 180.0);
-            }
 
             return result;
         }
@@ -184,13 +182,11 @@ public class MainActivity extends AppCompatActivity {
 
             double result = 0.0;
 
-            if (z == 0) {
+            if (z == 0)
                 result = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) - 2*x*y*Math.cos(Z * Math.PI / 180.0));
-            }
 
-            else if (Z == 0) {
+            else if (Z == 0)
                 result = Math.acos((Math.pow(x, 2) + Math.pow(y, 2) - Math.pow(z, 2)) / 2*x*y) * 180.0 / Math.PI;
-            }
 
             return result;
         }
@@ -235,12 +231,26 @@ public class MainActivity extends AppCompatActivity {
             Toast error = Toast.makeText(this, "Not enough given", Toast.LENGTH_LONG);
             error.show();
         }
+
         else if (unknown.length() > 3) {
             Toast error = Toast.makeText(this, "Too many given", Toast.LENGTH_LONG);
             error.show();
         }
-        else {
 
+        else {
+            //Solve the triangle based on unknown
+            //Concatenate answers to answer fields in answers layout
+            Triangle triangle = new Triangle(unknown);
+            leftA.setText(leftA.getText() + Double.toString(angleA));
+            leftB.setText(leftB.getText() + Double.toString(angleB));
+            leftC.setText(leftC.getText() + Double.toString(angleC));
+            rightA.setText(rightA.getText() + Double.toString(sideA));
+            rightB.setText(rightB.getText() + Double.toString(sideB));
+            rightC.setText(rightC.getText() + Double.toString(sideC));
+
+            //Make answers layout visible
+            leftAnswers.setVisibility(View.VISIBLE);
+            rightAnswers.setVisibility(View.VISIBLE);
         }
     }
 
