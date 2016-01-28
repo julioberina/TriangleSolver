@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -85,6 +87,40 @@ public class MainActivity extends AppCompatActivity {
 
     public void resetted(View v) {
 
+        LinearLayout leftAnswers = (LinearLayout)findViewById(R.id.angles);
+        LinearLayout rightAnswers = (LinearLayout)findViewById(R.id.sides);
+
+        TextView leftA = (TextView)findViewById(R.id.Aanswer);
+        TextView leftB = (TextView)findViewById(R.id.Banswer);
+        TextView leftC = (TextView)findViewById(R.id.Canswer);
+        TextView rightA = (TextView)findViewById(R.id.aanswer);
+        TextView rightB = (TextView)findViewById(R.id.banswer);
+        TextView rightC = (TextView)findViewById(R.id.canswer);
+
+        AText = (EditText)findViewById(R.id.Afield);
+        BText = (EditText)findViewById(R.id.Bfield);
+        CText = (EditText)findViewById(R.id.Cfield);
+        atext = (EditText)findViewById(R.id.afield);
+        btext = (EditText)findViewById(R.id.bfield);
+        ctext = (EditText)findViewById(R.id.cfield);
+
+        //Set all EditText fields to empty strings
+        AText.setText("");
+        BText.setText("");
+        CText.setText("");
+        atext.setText("");
+        btext.setText("");
+        ctext.setText("");
+
+        //Make answer field layouts invisible and erase answers beside angle/side label
+        leftAnswers.setVisibility(View.INVISIBLE);
+        rightAnswers.setVisibility(View.INVISIBLE);
+        leftA.setText("A:  ");
+        leftB.setText("B:  ");
+        leftC.setText("C:  ");
+        rightA.setText("a:  ");
+        rightB.setText("b:  ");
+        rightC.setText("c:  ");
     }
 
     @Override
