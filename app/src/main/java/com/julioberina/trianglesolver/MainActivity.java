@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private class Triangle {
+    class Triangle {
 
         //solve for the unknown based on what's missing and what's given
         public Triangle(String unknown) {
@@ -241,12 +241,12 @@ public class MainActivity extends AppCompatActivity {
             //Solve the triangle based on unknown
             //Concatenate answers to answer fields in answers layout
             Triangle triangle = new Triangle(unknown);
-            leftA.setText(leftA.getText() + Double.toString(angleA));
-            leftB.setText(leftB.getText() + Double.toString(angleB));
-            leftC.setText(leftC.getText() + Double.toString(angleC));
-            rightA.setText(rightA.getText() + Double.toString(sideA));
-            rightB.setText(rightB.getText() + Double.toString(sideB));
-            rightC.setText(rightC.getText() + Double.toString(sideC));
+            leftA.append(String.format("%.4f\n", angleA));
+            leftB.append(String.format("%.4f\n", angleB));
+            leftC.append(String.format("%.4f\n", angleC));
+            rightA.append(String.format("%.4f\n", sideA));
+            rightB.append(String.format("%.4f\n", sideB));
+            rightC.append(String.format("%.4f\n", sideC));
 
             //Make answers layout visible
             leftAnswers.setVisibility(View.VISIBLE);
