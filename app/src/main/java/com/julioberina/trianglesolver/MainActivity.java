@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -51,6 +52,27 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Button sb = (Button)findViewById(R.id.solveButton);
+        Button rb = (Button)findViewById(R.id.resetButton);
+
+        //Listener for Solve and Reset buttons
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.solveButton:
+                        clicked(v);
+                        break;
+                    case R.id.resetButton:
+                        resetted(v);
+                        break;
+                }
+            }
+        };
+
+        sb.setOnClickListener(listener);
+        rb.setOnClickListener(listener);
     }
 
     @Override

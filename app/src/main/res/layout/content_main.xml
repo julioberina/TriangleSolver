@@ -169,16 +169,14 @@
             android:layout_height="wrap_content"
             android:text="SOLVE"
             android:id="@+id/solveButton"
-            android:layout_marginLeft="40dp"
-            android:onClick="clicked" />
+            android:layout_marginLeft="40dp" />
 
         <Button
             android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:text="RESET"
             android:id="@+id/resetButton"
-            android:layout_marginLeft="10dp"
-            android:onClick="resetted" />
+            android:layout_marginLeft="10dp" />
     </LinearLayout>
 
     <LinearLayout
