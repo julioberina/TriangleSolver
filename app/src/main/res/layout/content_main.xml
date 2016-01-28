@@ -169,7 +169,8 @@
             android:layout_height="wrap_content"
             android:text="SOLVE"
             android:id="@+id/solveButton"
-            android:layout_marginLeft="40dp" />
+            android:layout_marginLeft="40dp"
+            android:onClick="clicked" />
 
         <Button
             android:layout_width="125dp"

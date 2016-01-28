@@ -5,11 +5,27 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    private EditText Atext;
+    private EditText BText;
+    private EditText CText;
+    private EditText atext;
+    private EditText btext;
+    private EditText ctext;
+    private double angleA;
+    private double angleB;
+    private double angleC;
+    private double sideA;
+    private double sideB;
+    private double sideC;
+
+        
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        
     }
 
     @Override
@@ -35,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    public void clicked(View v) {
+        Atext = (EditText)findViewById(R.id.Afield);
+
+        //Angle A
+        try { angleA = Double.parseDouble(Atext.getText().toString()); }
+        catch (Exception e) { angleA = 0; }
+
     }
 
     @Override
