@@ -177,7 +177,8 @@
             android:layout_height="wrap_content"
             android:text="RESET"
             android:id="@+id/resetButton"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:onClick="resetted" />
     </LinearLayout>
 
     <LinearLayout
