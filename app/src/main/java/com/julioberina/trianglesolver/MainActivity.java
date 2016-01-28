@@ -347,6 +347,7 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Toast toast = Toast.makeText(this, "You clicked on Settings!", Toast.LENGTH_LONG);
+            toast.show();
             return true;
         }
 
