@@ -66,11 +66,99 @@ public class MainActivity extends AppCompatActivity {
         public Triangle(String unknown) {
             switch (unknown) {
                 case "Cbc":
-                    angleC = angleA + angleB;
+                    angleC = 180 - (angleA + angleB);
                     sideB = lawOfSines(angleB, sideB, angleA, sideA);
                     sideC = lawOfSines(angleC, sideC, angleA, sideA);
                     break;
                 case "Cac":
+                    angleC = 180 - (angleA + angleB);
+                    sideA = lawOfSines(angleA, sideA, angleB, sideB);
+                    sideC = lawOfSines(angleC, sideC, angleB, sideB);
+                    break;
+                case "Cab":
+                    angleC = 180 - (angleA + angleB);
+                    sideA = lawOfSines(angleA, sideA, angleC, sideC);
+                    sideB = lawOfSines(angleB, sideB, angleC, sideC);
+                    break;
+                case "Bbc":
+                    angleB = 180 - (angleA + angleC);
+                    sideB = lawOfSines(angleB, sideB, angleA, sideA);
+                    sideC = lawOfSines(angleC, sideC, angleA, sideA);
+                    break;
+                case "Bac":
+                    angleB = 180 - (angleA + angleC);
+                    sideA = lawOfSines(angleA, sideA, angleB, sideB);
+                    sideC = lawOfSines(angleC, sideC, angleB, sideB);
+                    break;
+                case "Bab":
+                    angleB = 180 - (angleA + angleC);
+                    sideA = lawOfSines(angleA, sideA, angleC, sideC);
+                    sideB = lawOfSines(angleB, sideB, angleC, sideC);
+                    break;
+                case "Abc":
+                    angleA = 180 - (angleB + angleC);
+                    sideB = lawOfSines(angleB, sideB, angleA, sideA);
+                    sideC = lawOfSines(angleC, sideC, angleA, sideA);
+                    break;
+                case "Aac":
+                    angleA = 180 - (angleB + angleC);
+                    sideA = lawOfSines(angleA, sideA, angleB, sideB);
+                    sideC = lawOfSines(angleC, sideC, angleB, sideB);
+                    break;
+                case "Aab":
+                    angleA = 180 - (angleB + angleC);
+                    sideA = lawOfSines(angleA, sideA, angleC, sideC);
+                    sideB = lawOfSines(angleB, sideB, angleC, sideC);
+                    break;
+                case "BCc":
+                    angleB = lawOfSines(angleB, sideB, angleA, sideA);
+                    angleC = 180 - (angleA + angleB);
+                    sideC = lawOfSines(angleC, sideC, angleA, sideA);
+                    break;
+                case "BCb":
+                    angleC = lawOfSines(angleC, sideC, angleA, sideA);
+                    angleB = 180 - (angleA + angleC);
+                    sideB = lawOfSines(angleB, sideB, angleA, sideA);
+                    break;
+                case "BCa":
+                    sideA = lawOfCosines(sideB, sideC, sideA, angleA);
+                    angleB = lawOfSines(angleB, sideB, angleA, sideA);
+                    angleC = 180 - (angleA + angleB);
+                    break;
+                case "ACc":
+                    angleA = lawOfSines(angleA, sideA, angleB, sideB);
+                    angleC = 180 - (angleA + angleB);
+                    sideC = lawOfSines(angleC, sideC, angleB, sideB);
+                    break;
+                case "ACb":
+                    sideB = lawOfCosines(sideA, sideC, sideB, angleB);
+                    angleA = lawOfSines(angleA, sideA, angleB, sideB);
+                    angleC = 180 - (angleA + angleB);
+                    break;
+                case "ACa":
+                    angleC = lawOfSines(angleC, sideC, angleB, sideB);
+                    angleA = 180 - (angleB + angleC);
+                    sideA = lawOfSines(angleA, sideA, angleB, sideB);
+                    break;
+                case "ABc":
+                    sideC = lawOfCosines(sideA, sideB, sideC, angleC);
+                    angleA = lawOfSines(angleA, sideA, angleC, sideC);
+                    angleB = 180 - (angleA + angleC);
+                    break;
+                case "ABb":
+                    angleA = lawOfSines(angleA, sideA, angleC, sideC);
+                    angleB = 180 - (angleA + angleC);
+                    sideB = lawOfSines(angleB, sideB, angleC, sideC);
+                    break;
+                case "ABa":
+                    angleB = lawOfSines(angleB, sideB, angleC, sideC);
+                    angleA = 180 - (angleB + angleC);
+                    sideA = lawOfSines(angleA, sideA, angleC, sideC);
+                    break;
+                case "ABC":
+                    angleA = lawOfCosines(sideB, sideC, sideA, angleA);
+                    angleB = lawOfSines(angleB, sideB, angleA, sideA);
+                    angleC = 180 - (angleA + angleB);
                     break;
             }
         }
