@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText Atext;
+    private EditText AText;
     private EditText BText;
     private EditText CText;
     private EditText atext;
@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private double sideA;
     private double sideB;
     private double sideC;
-
-        
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +50,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clicked(View v) {
-        Atext = (EditText)findViewById(R.id.Afield);
+        String unknown = "";
+        AText = (EditText)findViewById(R.id.Afield);
+        BText = (EditText)findViewById(R.id.Bfield);
+        CText = (EditText)findViewById(R.id.Cfield);
+        atext = (EditText)findViewById(R.id.afield);
+        btext = (EditText)findViewById(R.id.bfield);
+        ctext = (EditText)findViewById(R.id.cfield);
 
         //Angle A
-        try { angleA = Double.parseDouble(Atext.getText().toString()); }
-        catch (Exception e) { angleA = 0; }
+        try { angleA = Double.parseDouble(AText.getText().toString()); }
+        catch (Exception e) { angleA = 0; unknown += "A"; }
+
+        //Angle B
+        try { angleB = Double.parseDouble(BText.getText().toString()); }
+        catch (Exception e) { angleB = 0; unknown += "B"; }
+
+        //Angle C
+        try { angleC = Double.parseDouble(CText.getText().toString()); }
+        catch (Exception e) { angleC = 0; unknown += "C"; }
+
+        //Side A
+        try { sideA = Double.parseDouble(atext.getText().toString()); }
+        catch (Exception e) { sideA = 0; unknown += "a"; }
+
+        //Side B
+        try { sideB = Double.parseDouble(btext.getText().toString()); }
+        catch (Exception e) { sideB = 0; unknown += "b"; }
+
+        //Side C
+        try { sideC = Double.parseDouble(ctext.getText().toString()); }
+        catch (Exception e) { sideC = 0; unknown += "c"; }
+    }
+
+    public void resetted(View v) {
 
     }
 
