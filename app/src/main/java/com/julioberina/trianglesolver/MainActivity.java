@@ -276,12 +276,12 @@ public class MainActivity extends AppCompatActivity {
             rightAnswers = (LinearLayout)findViewById(R.id.sides);
 
             //Add angles and sides to answers field
-            leftA.setText("A:  " + String.format("%.4f\n", angleA));
-            leftB.setText("B:  " + String.format("%.4f\n", angleB));
-            leftC.setText("C:  " + String.format("%.4f\n", angleC));
-            rightA.setText("a:  " + String.format("%.4f\n", sideA));
-            rightB.setText("b:  " + String.format("%.4f\n", sideB));
-            rightC.setText("c:  " + String.format("%.4f\n", sideC));
+            leftA.setText("A:  " + String.format("%.4f", angleA));
+            leftB.setText("B:  " + String.format("%.4f", angleB));
+            leftC.setText("C:  " + String.format("%.4f", angleC));
+            rightA.setText("a:  " + String.format("%.4f", sideA));
+            rightB.setText("b:  " + String.format("%.4f", sideB));
+            rightC.setText("c:  " + String.format("%.4f", sideC));
 
             //Make answers layout visible
             leftAnswers.setVisibility(View.VISIBLE);
