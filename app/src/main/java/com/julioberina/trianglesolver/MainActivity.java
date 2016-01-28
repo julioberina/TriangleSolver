@@ -291,16 +291,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void resetted(View v) {
 
+        //leftAnswers is the layout displaying the answers of angles A, B, and C
+        //rightAnswers is the layout displaying the answers of side a, b, and c
         leftAnswers = (LinearLayout)findViewById(R.id.angles);
         rightAnswers = (LinearLayout)findViewById(R.id.sides);
 
+        //left A, B, and C are the angles in respective order
         leftA = (TextView)findViewById(R.id.Aanswer);
         leftB = (TextView)findViewById(R.id.Banswer);
         leftC = (TextView)findViewById(R.id.Canswer);
+
+        //right A, B, and C are the side in respective order
         rightA = (TextView)findViewById(R.id.aanswer);
         rightB = (TextView)findViewById(R.id.banswer);
         rightC = (TextView)findViewById(R.id.canswer);
 
+        //Corresponds to the field of an angle or side
         AText = (EditText)findViewById(R.id.Afield);
         BText = (EditText)findViewById(R.id.Bfield);
         CText = (EditText)findViewById(R.id.Cfield);
@@ -340,6 +346,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast toast = Toast.makeText(this, "You clicked on Settings!", Toast.LENGTH_LONG);
             return true;
         }
 
