@@ -161,7 +161,8 @@
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:id="@+id/linearLayout4">
 
         <Button
             android:layout_width="125dp"
@@ -176,5 +177,82 @@
             android:text="RESET"
             android:id="@+id/resetButton"
             android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/linearLayout4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp"
+        android:id="@+id/angles"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="A:  "
+            android:id="@+id/Aanswer"
+            android:textSize="24dp"
+            android:layout_marginTop="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="B:  "
+            android:id="@+id/Banswer"
+            android:textSize="24dp"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="C:  "
+            android:id="@+id/Canswer"
+            android:textSize="24dp"
+            android:layout_marginTop="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@+id/angles"
+        android:layout_alignLeft="@+id/linearLayout3"
+        android:layout_alignStart="@+id/linearLayout3"
+        android:id="@+id/sides"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="a:  "
+            android:id="@+id/aanswer"
+            android:focusableInTouchMode="false"
+            android:textSize="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="b:  "
+            android:id="@+id/banswer"
+            android:textSize="24dp"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="c:  "
+            android:id="@+id/canswer"
+            android:textSize="24dp"
+            android:layout_marginTop="15dp" />
     </LinearLayout>
 </RelativeLayout>
