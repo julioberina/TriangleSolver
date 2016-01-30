@@ -209,6 +209,14 @@ public class MainActivity extends AppCompatActivity {
         btext = (EditText)findViewById(R.id.bfield);
         ctext = (EditText)findViewById(R.id.cfield);
 
+        //Disable boxes to halt input
+        AText.setEnabled(false);
+        BText.setEnabled(false);
+        CText.setEnabled(false);
+        atext.setEnabled(false);
+        btext.setEnabled(false);
+        ctext.setEnabled(false);
+
         //Angle A
         try { angleA = Double.parseDouble(AText.getText().toString()); }
         catch (Exception e) { angleA = 0; unknown += "A"; }
@@ -275,6 +283,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetted(View v) {
+
+        //Enable boxes to take input again
+        AText.setEnabled(true);
+        BText.setEnabled(true);
+        CText.setEnabled(true);
+        atext.setEnabled(true);
+        btext.setEnabled(true);
+        ctext.setEnabled(true);
 
         //leftAnswers is the layout displaying the answers of angles A, B, and C
         //rightAnswers is the layout displaying the answers of side a, b, and c
